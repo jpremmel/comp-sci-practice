@@ -15,4 +15,13 @@ describe('binarySearchTree', () => {
     expect(bst.root).toEqual(node);
   });
 
+  test('should add a child node to the left of the root node', () => {
+    let bst = new BST();
+    let rootNode = new BSTNode(36);
+    bst.insertNode(rootNode);
+    let newNode = new BSTNode(22);
+    bst.insertNode(newNode);
+    expect(rootNode.left.data).toEqual(22);
+  });
+
 });
