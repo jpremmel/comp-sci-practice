@@ -4,4 +4,8 @@ export default class BST {
     this.root = null;
   }
 
+  insertNode(node) {
+    this.root = node;
+  }
+
 }
