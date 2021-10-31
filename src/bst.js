@@ -18,8 +18,12 @@ export default class BST {
             currentNode = currentNode.left;
           }
         } else if (currentNode.data < insertedNode.data) {
-          currentNode.right = insertedNode;
-          return this;
+          if (currentNode.right === null) {
+            currentNode.right = insertedNode;
+            return this;
+          } else {
+            currentNode = currentNode.right;
+          }
         }
       }
     }
