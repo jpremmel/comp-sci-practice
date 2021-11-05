@@ -3,6 +3,7 @@ import BSTNode from '../src/bst-node.js';
 
 describe('binarySearchTree', () => {
 
+  // Tests for building the binary search tree
   test('should initialize a binary search tree with a root of null', () => {
     let bst = new BST();
     expect(bst.root).toEqual(null);
@@ -78,6 +79,44 @@ describe('binarySearchTree', () => {
         "right": null 
       }
     });
+  });
+
+
+  // Tests for searching the binary search tree
+  const pbst = new BST();
+
+  beforeEach(() => {
+    pbst.insertNode(new BSTNode(4));
+    pbst.insertNode(new BSTNode(2));
+    pbst.insertNode(new BSTNode(6));
+    pbst.insertNode(new BSTNode(1));
+    pbst.insertNode(new BSTNode(3));
+    pbst.insertNode(new BSTNode(5));
+    pbst.insertNode(new BSTNode(7));
+  });
+
+  test('should return true if the root node is equal to 4', () => {
+    expect(pbst.search(4)).toEqual(true);
+  });
+
+  test('should return false if the root node is not equal to 31', () => {
+    expect(pbst.search(31)).toEqual(false);
+  });
+
+  test('should return true if the first child node on the left is equal to 2', () => {
+    expect(pbst.search(2)).toEqual(true);
+  });
+
+  test('should return false if the value 0 is not in the tree', () => {
+    expect(pbst.search(0)).toEqual(false);
+  });
+
+  test('should return true if the tree includes 7', () => {
+    expect(pbst.search(7)).toEqual(true);
+  });
+
+  test('should return true if the tree includes 5', () => {
+    expect(pbst.search(5)).toEqual(true);
   });
 
 });
